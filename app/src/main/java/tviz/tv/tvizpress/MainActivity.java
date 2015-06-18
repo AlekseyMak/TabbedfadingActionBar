@@ -62,17 +62,19 @@ public class MainActivity extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        mFadingActionBarHelper = new FadingActionBarHelper(actionBar,
-                getResources().getDrawable(R.drawable.actionbar_bg));
-
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new ListViewFragment())
-                    .commit();
-        }
+//        mFadingActionBarHelper = new FadingActionBarHelper(actionBar,
+//                getResources().getDrawable(R.drawable.actionbar_bg));
+//
+//        if (savedInstanceState == null) {
+//            getFragmentManager().beginTransaction()
+//                    .add(R.id.container, new ListViewFragment())
+//                    .commit();
+//        }
 
         mViewPager = new ViewPager(this);
         mViewPager.setId(R.id.pager);
+
+        setContentView(mViewPager);
 
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
